@@ -1,4 +1,4 @@
-UnnamedApp
+Tim-Perry.co.uk [![Build Status](https://api.travis-ci.org/pimterry/tim-perry.co.uk.png)](https://travis-ci.org/pimterry/tim-perry.co.uk)
 ==========
 
 This repo contains a template for a Sinatra project on Heroku, with Travis, Vagrant & New Relic all in place, and a solid

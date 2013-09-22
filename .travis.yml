@@ -5,7 +5,7 @@ rvm:
 bundler_args: --without development production
 
 # This essentially defines a build pipeline: we first run the full set of locally runnable tests (unit + functional)
-# For master pushes, we then deploy to comparably-test and push on to the staging branch.
+# For master pushes, we then deploy to the test site and push on to the staging branch.
 # Travis then builds the staging branch, which runs integration tests against the newly-live staging deployment
 # Once these pass, Travis deploys the code to live, and pushes to the prod branch (mostly just for reference)
 
@@ -18,10 +18,10 @@ script:
 deploy:
   provider: heroku
   app:
-    master: unnamedapp-test
-    staging: unnamedapp
+    master: tim-perry-test
+    staging: tim-perry
   api_key:
-    # secure: TODO uncomment and add your encrypted heroku deploy key here
+    secure: jbSFy9O9KS08AZK1LVpYF7ZDX2eU0hoqh3wcsBulm2Dydp0i03p7cJgi+ZIn0wE8hmZ0L9DLBL13v6+6qylan0YtUTjWDEaNRTkE4WR145QtTIu8dSUPsc9/6O6yD7IMqjqoP7SGXX0PC/jKaJZykV8sWgawUx9gakYIIQi+43c=
 
 after_success:
   # TODO update git urls below
@@ -39,4 +39,4 @@ branches:
 
 env:
   global:
-    # secure: TODO uncomment and add your encrypted GH_OAUTH_TOKEN here
+    secure: glmgbyVmjjUnP1jjlAwFjLSlY0mz0B1o8AeLzVhPK+sdPSW0L7qY6lyQwVVS4wpCPCiTmIw5qWLRiyhtaHLOU0r9E9/fZ30Gonfg/HJMlcmRfcjiabwqdtDBg2m1Pnpl9+l2tPsCwye7A67iORMvGlZqVgfnKGeINk5/uA6WEXU=

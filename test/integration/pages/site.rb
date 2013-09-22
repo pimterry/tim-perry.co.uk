@@ -1,4 +1,4 @@
-class UnnamedAppSite
+class TimPerrySite
   def initialize(browser, root_url)
     @browser = browser
     @root_url = root_url

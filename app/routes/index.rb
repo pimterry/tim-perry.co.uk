@@ -1,4 +1,4 @@
-class UnnamedApp < Sinatra::Base
+class TimPerryApp < Sinatra::Base
   get '/' do
     "Hello world"
   end

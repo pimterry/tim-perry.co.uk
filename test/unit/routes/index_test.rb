@@ -8,7 +8,7 @@ module Routes
     include Rack::Test::Methods
 
     def app
-      UnnamedApp
+      TimPerryApp
     end
 
     it "loads successfully" do

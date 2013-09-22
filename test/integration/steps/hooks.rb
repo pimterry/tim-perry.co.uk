@@ -11,7 +11,7 @@ end
 
 Before do
   root_url = ENV['INTEGRATION_TEST_TARGET']
-  @site = UnnamedAppSite.new(browser, root_url)
+  @site = TimPerrySite.new(browser, root_url)
   @site.load(HomePage)
 end
 

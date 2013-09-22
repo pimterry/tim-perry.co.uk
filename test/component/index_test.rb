@@ -12,7 +12,7 @@ module ComponentTests
     end
 
     def app
-      UnnamedApp
+      TimPerryApp
     end
 
     it "loads successfully" do

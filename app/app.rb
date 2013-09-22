@@ -1,12 +1,12 @@
 require 'sinatra'
 
-class UnnamedApp < Sinatra::Base
+class TimPerryApp < Sinatra::Base
   set :app_file, __FILE__
 
   configure :development do
     require 'rack'
 
-    UnnamedApp.reset!
+    TimPerryApp.reset!
     use Rack::Reloader
 
     enable :dump_errors

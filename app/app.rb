@@ -4,11 +4,6 @@ class TimPerryApp < Sinatra::Base
   set :app_file, __FILE__
 
   configure :development do
-    require 'rack'
-
-    TimPerryApp.reset!
-    use Rack::Reloader
-
     enable :dump_errors
     enable :raise_errors
   end

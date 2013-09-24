@@ -1,4 +1,3 @@
-include "apt"
 /*
  This file defines the deployment instructions when vagrant up-ing a local dev environment.
  This should create a close approximation of the Heroku deployment environment used in actual
@@ -16,7 +15,6 @@ file { $envVarsScript:
   source => "file:///vagrant/puppet/heroku_env_vars.sh"
 }
 
-
 package { "libffi-dev": }
 ->
 exec { 'bundle install':
@@ -24,3 +22,7 @@ exec { 'bundle install':
   cwd => "/vagrant"
 }
 
+exec { 'createdb blog':
+  path => '/usr/bin',
+  user => 'postgres'
+}

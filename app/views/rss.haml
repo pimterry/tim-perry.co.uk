@@ -1,0 +1,17 @@
+!!! XML
+%feed{:xmlns => "http://www.w3.org/2005/Atom"}
+  %title Tim Perry (etc.)
+  %link{:href => "#{post_root}/blog/rss", :rel => "self"}
+  %link{:href => "#{post_root}"}
+  %id=post_root
+  %updated=feed_updated
+  %author
+    %name Tim Perry
+    %email tim@tim-perry.co.uk
+  - for post in posts
+    %entry
+      %id="#{post_root}/#{post.url}"
+      %link{:href=>"#{post_root}/#{post.url}"}
+      %title=post.title
+      %updated=post.posted_at
+      %summary{:type => "html"}=post.content_html

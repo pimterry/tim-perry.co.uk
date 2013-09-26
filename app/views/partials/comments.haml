@@ -1,0 +1,31 @@
+%ol
+  - comments.each do |c|
+    %li
+      =c.heading_html
+      - if authorized?
+        %a{:href => c.delete_url}
+          Delete
+      %br>
+      =c.content_html
+  %li
+    %form{:method => 'post', :action => comment_post_url}
+      %label
+        Your name:
+        %br
+        %input{:name => 'name', :type => 'text'}
+      %br
+      %label
+        Your post:
+        %br
+        %textarea{:name => 'content', :cols => '80', :rows => '10'}
+      %br
+      %label{:id => 'bot_detection'}
+        You have javascript disabled. Please enter '#{captcha_value}' below:
+        %input{:name => 'bot_detector', :type => 'text'}
+      :javascript
+        captcha = $("#bot_detection")
+        captcha.find("input").val(#{captcha_value})
+        captcha.hide()
+      %br
+      %button{:name => 'comment_submit', :type => 'submit'}
+        Submit

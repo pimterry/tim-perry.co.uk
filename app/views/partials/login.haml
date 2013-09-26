@@ -1,0 +1,15 @@
+%form{:method => "post", :action => action}
+  %p
+    %label
+      Username:
+      %br/
+      %input{:type => "text", :name => :username}
+    %br/
+    %label
+      Password:
+      %br/
+      %input{:type => "password", :name => :password}
+    %br/    
+    %br/    
+    %button{:name => 'login_submit', :type => 'submit'}
+      Submit

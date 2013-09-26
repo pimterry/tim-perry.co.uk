@@ -1,7 +1,7 @@
 require 'rspec/expectations'
 require 'watir-webdriver'
 require_relative '../pages/site'
-require_relative '../pages/home'
+require_relative '../pages/blog'
 
 if ENV['WEBDRIVER_URL'] then
   browser = Watir::Browser.new(:remote, :url => ENV['WEBDRIVER_URL'])

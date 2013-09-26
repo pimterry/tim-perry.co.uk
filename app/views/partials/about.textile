@@ -1,0 +1,3 @@
+I'm a 23 year old software developer, I've just finished a computer science degree at Keble College, Oxford,
+and I'm currently working for "Softwire":http://softwire.com, a little software consultancy place in north London.
+I do lots of things with computers, mostly in Java and Python, but really in almost anything I can get my hands on.

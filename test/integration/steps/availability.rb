@@ -1,6 +1,6 @@
-require_relative '../pages/home'
+require_relative '../pages/blog'
 
-When(/^the home page is loaded directly$/) do
+When(/^the blog page is loaded directly$/) do
   @home = @site.load(HomePage)
 end
 

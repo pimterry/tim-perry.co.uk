@@ -1,0 +1,29 @@
+%form{:method => "post", :action => "/blog"}
+  - if defined? postObj
+    %input{:type => "hidden",
+           :name => "id",
+           :value => postObj.id}
+
+  %p
+    %label
+      Post title
+      %br/
+      %input{:type  => "text", 
+             :name  => "title",
+             :value => (defined? postObj) ? (postObj.title) : ""} 
+    %br/
+    %label
+      Post content
+      %br
+      %textarea{:name => 'content', :cols => '120', :rows => '40'}
+        =preserve (defined? postObj) ? (postObj.content) : ""
+    %br/
+    %label
+      Post visibility date
+      %br/
+      %input{:type  => "text", 
+             :name  => "posting_date",
+             :value => ((defined? postObj) ? postObj.posted_at.strftime('%Y-%m-%d') : Date.today)}
+    %br/
+    %button{:name => 'post_submit', :type => 'submit'}
+      Submit

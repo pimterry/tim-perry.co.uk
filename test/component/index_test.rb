@@ -4,11 +4,11 @@ require 'rack/test'
 require './app/app'
 
 module ComponentTests
-  describe "The index page" do
+  describe "The blog page" do
     include Rack::Test::Methods
 
     before(:each) do
-      # TODO: Add whatever's required to mock out actual DB accesses in your application
+      ENV['DATABASE_URL'] = 'sqlite::memory:'
     end
 
     def app
@@ -16,7 +16,7 @@ module ComponentTests
     end
 
     it "loads successfully" do
-      get '/'
+      get '/blog'
       expect(last_response).to be_ok
     end
   end

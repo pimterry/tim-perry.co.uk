@@ -12,11 +12,13 @@ class TimPerryApp < Sinatra::Base
     require 'newrelic_rpm'
   end
 
-  require_relative 'model/init'
+  require_relative './blog_helpers'
+  require_relative './rendering_helpers'
+  require_relative './auth_helpers'
+  require_relative './model/init'
+  require_relative './routes/init'
 
   def initialize(app = nil)
     super(app)
   end
-
-  require_relative './routes/init.rb'
 end

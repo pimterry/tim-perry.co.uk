@@ -9,6 +9,6 @@ class HomePage
   end
 
   def is_loaded
-    @browser.html.include? "Hello world"
+    @browser.html.include? "Tim Perry"
   end
 end

@@ -1,5 +1,5 @@
 class TimPerryApp < Sinatra::Base
   get '/' do
-    "Hello world"
+    redirect '/blog'
   end
 end

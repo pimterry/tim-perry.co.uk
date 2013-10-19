@@ -17,12 +17,12 @@ file { $envVarsScript:
 
 package { "libffi-dev": }
 ->
-exec { 'bundle install':
+exec { 'bundle install --without development':
   path => ["/usr/bin", "/opt/ruby/bin"],
   cwd => "/vagrant"
 }
 
-exec { 'createdb blog':
-  path => '/usr/bin',
+exec { 'test 1 -eq "`psql -l | grep -c blog`" || createdb blog':
+  path => ['/bin/', '/usr/bin'],
   user => 'postgres'
 }

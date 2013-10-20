@@ -1,3 +1,7 @@
-I'm a 23 year old software developer, I've just finished a computer science degree at Keble College, Oxford,
-and I'm currently working for "Softwire":http://softwire.com, a little software consultancy place in north London.
-I do lots of things with computers, mostly in Java and Python, but really in almost anything I can get my hands on.
+I'm a 24 year old software developer, mostly working in Java & JavaScript, with a good bit of Ruby, Python and C# for luck. I'm feverishly keen on all things relating to automated testing, devops, polyglot persistence, and good old-fashioned high-quality software development.
+
+By day I'm a technical lead and the open-source champion at "Softwire":http://softwire.com, guiding teams and building great software for our clients, and pushing Softwire to engage with and giving back to the wider software development community.
+
+By night I'm a prolific open-source contributor, on things like "JUnit":http://github.com/junit-team/junit, "Ektorp":http://github.com/helun/ektorp and "Knockout":http://github.com/knockout/knockout, and some of my own projects (such as "loglevel":http://github.com/pimterry/loglevel, a fairly popular JavaScript logging framework).
+
+I also give talks on all things technical too (on things like "modular JavaScript":http://www.youtube.com/watch?v=Uca0BChjpp4, "XML attacks":http://www.youtube.com/watch?v=RzjUw47ZIg0 and "performance testing":http://www.youtube.com/watch?v=4J8yXOEYw9A) and I'm a frequent hackathon attendee (and occasional winner).

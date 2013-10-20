@@ -9,10 +9,12 @@ else
   browser = Watir::Browser.new(:phantomjs)
 end
 
+puts "\nWebDriver browser loaded\n\n"
+
 Before do
   root_url = ENV['INTEGRATION_TEST_TARGET']
   @site = TimPerrySite.new(browser, root_url)
-  @site.load(HomePage)
+  @site.load(BlogPage)
 end
 
 at_exit do

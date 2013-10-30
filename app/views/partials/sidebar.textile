@@ -1,0 +1,6 @@
+This *Tim Perry*'s blog.
+
+I do things with computers at "Softwire":http://softwire.com, and lots of
+"other things with computers":https://github.com/pimterry in the open-source community. It's mostly in that sort of vein.
+
+For more information, try the "about me":/about page, or try reading things at random.

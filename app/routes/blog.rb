@@ -76,13 +76,12 @@ end
 def render_posts_page posts
   posts = posts.map { |p| PostIntro.new(p, authorized?) }
 
+  sidebar = Paragraph.new("What's this?",
+                          textile(:'partials/sidebar'))
+
   haml :template, :locals => { :title      => "Blog",
                                :paragraphs => posts,
-                               :sidebar    => Paragraph.new("What's this?",
-     "<p>This is the blog of <strong>Tim Perry</strong>. I make things " +
-     "on computers, it's mostly in that sort of vein.</p>" +
-     "<p>For more information, try the <a href='/about'>About Me</a> page, "+
-     "or just start reading things.")}
+                               :sidebar    => sidebar }
 end
 
 def render_single_post_page post

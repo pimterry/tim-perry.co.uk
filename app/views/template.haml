@@ -42,42 +42,31 @@
           %a{:href => "/#{m.downcase}"}
             =m
 
-    #titleback
-      #titleblock
-        #title
-          .tlcorner
-          .blcorner
-          %h1=title
-        - if defined? update_time
-          #metatitle
-            %strong Last updated
-            %br>
-            on
-            %strong=update_time.strftime('%d-%m-%Y')
-            %br>
-            at
-            %strong=update_time.strftime('%I:%M %p')
-
     #mainBlock
+      #title
+        %h1=title
+      - if defined? update_time
+        #metatitle
+          %strong Last updated
+          %br>
+          on
+          %strong=update_time.strftime('%d-%m-%Y')
+          %br>
+          at
+          %strong=update_time.strftime('%I:%M %p')
+
       #content
         - paragraphs.each do |p|
-          .headingshifter
-            .headingunshifter
-              .trcorner
-              .brcorner
-              - if p.respond_to? :url  
-                %a{:href => p.url}
-                  %h3=p.heading_html
-              - else
+          .heading
+            - if p.respond_to? :url
+              %a{:href => p.url}
                 %h3=p.heading_html
+            - else
+              %h3=p.heading_html
           ~ p.content_html
       - if defined? sidebar
         #sidebar
           .anchorblock
-            .tlcorner
-            .blcorner
-            .trcorner
-            .brcorner
             %h3=sidebar.heading_html
           =sidebar.content_html
 

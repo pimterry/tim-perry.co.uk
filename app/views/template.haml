@@ -44,16 +44,16 @@
 
     #mainBlock
       #title
+        - if defined? update_time
+          #metatitle
+            %strong Last updated
+            %br>
+            on
+            %strong=update_time.strftime('%d-%m-%Y')
+            %br>
+            at
+            %strong=update_time.strftime('%I:%M %p')
         %h1=title
-      - if defined? update_time
-        #metatitle
-          %strong Last updated
-          %br>
-          on
-          %strong=update_time.strftime('%d-%m-%Y')
-          %br>
-          at
-          %strong=update_time.strftime('%I:%M %p')
 
       #content
         - paragraphs.each do |p|

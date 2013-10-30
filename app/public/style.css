@@ -10,11 +10,11 @@
   padding: 0;
 }
 
-html
+body
 {
   font-family: "Trebuchet MS";
-  overflow: -moz-scrollbars-vertical;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 a

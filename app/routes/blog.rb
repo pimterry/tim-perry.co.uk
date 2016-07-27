@@ -37,18 +37,6 @@ class TimPerryApp < Sinatra::Base
                        :feed_updated => last_updated,
                        :posts => posts }
   end
-
-  post %r{/blog/(\d{4})/(\d{2})/(\d{2})/([\w\d_]+)/?} do |year, month, day, title|
-    post = get_single_post(year, month, day, title)
-
-    if params[:bot_detector] == "#{CAPTCHA_VALUE}" then
-      post.comments.create(:name    => params[:name],
-                           :link    => params[:link],
-                           :content => params[:content])
-    end
-
-    redirect "#{post.url}#comments"
-  end
 end
 
 def show_posts posts
@@ -85,17 +73,8 @@ def render_posts_page posts
 end
 
 def render_single_post_page post
-  comments_html = haml :"partials/comments", :locals =>
-                          { :comments => Comment.all(:post => post),
-                            :comment_post_url => post.url,
-                            :captcha_value => CAPTCHA_VALUE }
-
-  comments_block = Paragraph.new("<a class='anchor' name='comments'>Comments</a>",
-                                 comments_html)
-
   haml :template, :locals => {:title => "Blog",
-                              :paragraphs => [post,
-                                              comments_block],
+                              :paragraphs => [post],
                               :update_time => post.posted_at}
 end
 
@@ -119,12 +98,6 @@ class PostIntro
     html = Hpricot.parse(@post.content_html)
     first_paragraph = (html/:p).first.to_html
     first_paragraph += "<p><a href='#{@post.url}'>Read this post</a>"
-
-    comment_count = @post.comments.length
-    if comment_count > 0 then
-      first_paragraph += " (or skip down to the <a href='#{@post.url}#comments'>" +
-                           "#{comment_count} comment#{'s' if comment_count > 1}</a>)"
-    end
 
     if @admin_style then
       first_paragraph += "<form action='#{@post.url}/delete' method='post'>" +

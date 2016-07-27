@@ -1,20 +1,10 @@
 language: ruby
-
 rvm:
-  - 2.0.0
+- 2.0.0
 bundler_args: --without development production
-
-# This essentially defines a build pipeline: we first run the full set of locally runnable tests (unit + functional)
-# For master pushes, we then deploy to the test site and push on to the staging branch.
-# Travis then builds the staging branch, which runs integration tests against the newly-live staging deployment
-# Once these pass, Travis deploys the code to live, and pushes to the prod branch (mostly just for reference)
-
-# These also a special case for pull requests: these never push or deploy, and run the whole local test suite only
-
 script:
-  - if [[ "$TRAVIS_BRANCH" != "staging" ]]; then rake local_test; fi
-  - if [[ "$TRAVIS_BRANCH" == "staging" ]]; then rake staging_integration; fi
-
+- if [[ "$TRAVIS_BRANCH" != "staging" ]]; then rake local_test; fi
+- if [[ "$TRAVIS_BRANCH" == "staging" ]]; then rake staging_integration; fi
 deploy:
   provider: heroku
   app:

@@ -15,5 +15,5 @@ When(/^the about page is loaded directly$/) do
 end
 
 Then(/^a successful response is received$/) do
-  @home.is_loaded.should be_true
+  @home.is_loaded.should be_truthy
 end

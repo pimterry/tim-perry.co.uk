@@ -1,4 +1,4 @@
-I'm a 24 year old software developer, mostly working in Java & JavaScript, with a good bit of Ruby, Python and C# for luck. I'm feverishly keen on all things relating to automated testing, devops, polyglot persistence, and good old-fashioned high-quality software development.
+I'm a 27 year old software developer, mostly working in Java & JavaScript, with a good bit of Ruby, Python and C# for luck. I'm feverishly keen on all things relating to automated testing, devops, polyglot persistence, and good old-fashioned high-quality software development.
 
 By day I'm a technical lead and the open-source champion at "Softwire":http://softwire.com, guiding teams and building great software for our clients, and pushing Softwire to engage with and giving back to the wider software development community.
 

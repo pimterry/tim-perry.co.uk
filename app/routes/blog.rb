@@ -33,7 +33,7 @@ class TimPerryApp < Sinatra::Base
 
     haml :rss, :format => :xhtml, :escape_html => true, :layout => false,
           :locals => { :title => "Tim Perry (etc.)",
-                       :post_root => "http://tim-perry.co.uk",
+                       :post_root => "http://oldblog.tim.fyi",
                        :feed_updated => last_updated,
                        :posts => posts }
   end

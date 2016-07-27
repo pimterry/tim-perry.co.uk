@@ -21,8 +21,7 @@ deploy:
     master: tim-perry-test
     staging: tim-perry
   api_key:
-    secure: jbSFy9O9KS08AZK1LVpYF7ZDX2eU0hoqh3wcsBulm2Dydp0i03p7cJgi+ZIn0wE8hmZ0L9DLBL13v6+6qylan0YtUTjWDEaNRTkE4WR145QtTIu8dSUPsc9/6O6yD7IMqjqoP7SGXX0PC/jKaJZykV8sWgawUx9gakYIIQi+43c=
-
+    secure: UlAuQkqDk1mm1PExOxfChqq9LM9iGKbSMQ7j5bNIvZQjfG4ixsWAjJ9/nxA+DKdYVrbQgdV4E3uhRWvM4KSUGC2UA/C/DTSkFQQDOFfi0qFYqNh8lN+yrpwPazv71SzQc3mBeWmMijmh/iJOe8V1iOvxyuTGqdq7si8DQwHurRY=
 after_deploy:
   # Various pushes to branches. Need to pipe to null to not expose OAuth token
   - if [[ "$TRAVIS_BRANCH" == "master" ]]; then

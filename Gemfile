@@ -8,6 +8,7 @@ gem 'RedCloth'
 gem 'hpricot'
 gem 'coderay'
 gem 'xml-sitemap'
+gem 'rack-canonical-host'
 
 gem 'datamapper'
 
